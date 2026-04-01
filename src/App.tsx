@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import Landing from "./components/ui/Landing";
 import BottomNavigation from "./components/layout/BottomNavigation";
 import JobPostingHeader from "./components/layout/JobPostingHeader";
 import WorkdayTopHeader from "./components/layout/WorkdayTopHeader";
@@ -12,6 +13,7 @@ import { defaultForm } from "./data/defaultForm";
 import * as Tormentor from "./components/ui/tormentor";
 
 export default function App() {
+  const [showLanding, setShowLanding] = useState(true);
   const [step, setStep] = useState(1);
   const [form, setForm] = useState(defaultForm);
   // Defaulting to a mid-range 9-digit number
@@ -51,12 +53,16 @@ export default function App() {
     [form, chaosValue],
   );
 
+  if (showLanding) {
+    return <Landing onApply={() => setShowLanding(false)} />;
+  }
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <WorkdayTopHeader />
 
       <main className="min-h-screen w-full bg-white pb-24">
-        <JobPostingHeader />
+        <JobPostingHeader onBack={() => setShowLanding(true)} />
         <ProgressSteps current={step} />
 
         <div className="px-8 pb-8">
