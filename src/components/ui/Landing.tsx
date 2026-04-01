@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function Landing({ onApply }: { onApply: () => void }) {
+export default function Landing({ 
+  onApply, 
+  volume, 
+  setVolume 
+}: { 
+  onApply: () => void;
+  volume: number;
+  setVolume: (v: number) => void;
+}) {
   // Start the button visually within the white box
   const [btnPos, setBtnPos] = useState({ x: -999, y: -999 }); // start off-screen to avoid flash
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -83,7 +91,23 @@ export default function Landing({ onApply }: { onApply: () => void }) {
             <div className="w-8 h-8 bg-blue-600 font-bold text-white flex items-center justify-center rounded-sm">SH</div>
             <span className="font-bold text-xl tracking-tight text-blue-900">SillyHacks Careers</span>
           </div>
-          <div className="hidden md:flex gap-6 text-sm font-semibold text-gray-600">
+          <div className="hidden md:flex gap-6 text-sm font-semibold text-gray-600 items-center">
+            {/* Added standard select dropdown for volume control */}
+            <div className="flex items-center gap-2">
+              <span>Volume:</span>
+              <select 
+                value={volume} 
+                onChange={(e) => setVolume(Number(e.target.value))}
+                className="border border-gray-300 rounded px-2 py-1 bg-white text-sm"
+              >
+                <option value={0}>Mute</option>
+                <option value={0.1}>10%</option>
+                <option value={0.25}>25%</option>
+                <option value={0.5}>50%</option>
+                <option value={1}>100%</option>
+              </select>
+            </div>
+
             <a href="#" className="hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 pb-5 pt-5">View profile</a>
             <a href="#" className="hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 pb-5 pt-5">Language (Global) ▼</a>
           </div>
