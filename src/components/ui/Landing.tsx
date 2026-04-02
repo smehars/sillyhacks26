@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import * as Tormentor from "./tormentor"; 
 
 export default function Landing({ 
   onApply, 
@@ -118,31 +119,13 @@ export default function Landing({
                     </select>
                   </div>
                   
-                  {/* Bad UX Volume Selector */}
-                  <div>
-                    <label className="mb-1 block text-xs font-bold text-gray-700">
-                      Audio Volume (Select One)
+                  {/* System Audio Config Tormentor */}
+                  <div className="border-t pt-4">
+                    <label className="mb-2 block text-xs font-bold text-gray-700">
+                      System Audio Integrity
                     </label>
-                    <div className="flex items-center justify-between gap-1">
-                      <span className="text-lg">🔊</span>
-                      {[0, 0.25, 0.5, 0.75, 1.0].map((val) => (
-                        <select
-                          key={val}
-                          value={volume === val ? val : "empty"}
-                          onChange={(e) => {
-                            if (e.target.value !== "empty") {
-                              setVolume(Number(e.target.value));
-                            } else {
-                              setVolume(0);
-                            }
-                          }}
-                          className="cursor-pointer border border-gray-400 bg-gray-50 px-1 text-base w-10 h-8 flex-shrink-0 text-center text-black"
-                          title="Guess the volume!"
-                        >
-                          <option value="empty">-</option>
-                          <option value={val}>■</option>
-                        </select>
-                      ))}
+                    <div className="p-2 border border-dashed border-gray-200 rounded">
+                      <Tormentor.TormentorVolumeSlider volume={volume} setVolume={setVolume} />
                     </div>
                   </div>
 
