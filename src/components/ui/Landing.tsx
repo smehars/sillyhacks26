@@ -51,10 +51,10 @@ export default function Landing({
       const distY = closestY - e.clientY;
       const distanceToEdge = Math.sqrt(distX * distX + distY * distY);
 
-      const repulseRadius = 60; 
+      const repulseRadius = 80; // Increased radius for more chaos
 
       if (distanceToEdge < repulseRadius) {
-        const force = (repulseRadius - distanceToEdge) * 1.5;
+        const force = (repulseRadius - distanceToEdge) * 2;
         
         let dirX = (buttonRect.left + btnObj.offsetWidth / 2) - e.clientX;
         let dirY = (buttonRect.top + btnObj.offsetHeight / 2) - e.clientY;
