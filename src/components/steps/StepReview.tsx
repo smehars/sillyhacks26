@@ -68,16 +68,6 @@ export default function StepReview({ form }: { form: JobApplication }) {
         ))}
       </div>
 
-      <Divider />
-
-      <div className="mb-6">
-        <SectionTitle>Application Questions</SectionTitle>
-        <Row label="Authorized to Work" value={form.authorizedToWork} />
-        <Row label="Requires Sponsorship" value={form.requireSponsorship} />
-        <Row label="Veteran Status" value={form.veteranStatus} />
-        <Row label="Heard About Role" value={form.howDidYouHear} />
-      </div>
-
       <div className="mb-4 rounded border border-yellow-200 bg-yellow-50 p-4 text-sm text-yellow-800">
         Please review your application carefully before submitting. Once submitted, you will not be
         able to make changes.

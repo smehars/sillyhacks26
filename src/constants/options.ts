@@ -2,8 +2,6 @@ export const STEPS = [
 
   "My Information",
   "My Experience",
-  "Application Questions",
-  "Voluntary Disclosures",
   "Review",
 ] as const;
 

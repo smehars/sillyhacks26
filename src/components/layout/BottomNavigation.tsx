@@ -18,7 +18,7 @@ export default function BottomNavigation({
           Back
         </button>
       )}
-      {step < 5 ? (
+      {step < 3 ? (
         <button
           onClick={onContinue}
           className="rounded-full bg-blue-600 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-700"

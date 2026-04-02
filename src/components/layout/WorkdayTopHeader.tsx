@@ -38,10 +38,10 @@ export default function WorkdayTopHeader({
       <header className="sticky top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3 shadow-sm">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded bg-orange-500 text-sm font-black text-white">
-            W
+          <div className="w-8 h-8 bg-blue-600 font-bold text-white flex items-center justify-center rounded-sm">
+            SH
           </div>
-          <span className="text-lg font-semibold text-orange-500">workday</span>
+          <span className="font-bold text-xl tracking-tight text-blue-900">SillyHacks Careers</span>
         </div>
 
         {/* Nav */}

@@ -3,11 +3,9 @@ import Landing from "./components/ui/Landing";
 import BottomNavigation from "./components/layout/BottomNavigation";
 import JobPostingHeader from "./components/layout/JobPostingHeader";
 import WorkdayTopHeader from "./components/layout/WorkdayTopHeader";
-import StepAppQuestions from "./components/steps/StepAppQuestions";
 import StepMyExperience from "./components/steps/StepMyExperience";
 import StepMyInformation from "./components/steps/StepMyInformation";
 import StepReview from "./components/steps/StepReview";
-import StepVoluntaryDisclosures from "./components/steps/StepVoluntaryDisclosures";
 import ChaosMediaOverlay, { pickRandomMedia } from "./components/ui/ChaosMediaOverlay";
 import ProgressSteps from "./components/ui/ProgressSteps";
 import { defaultForm } from "./data/defaultForm";
@@ -71,8 +69,6 @@ export default function App() {
       null,
       <StepMyInformation form={form} setForm={setForm} />,
       <StepMyExperience form={form} setForm={setForm} />,
-      <StepAppQuestions form={form} setForm={setForm} />,
-      <StepVoluntaryDisclosures form={form} setForm={setForm} />,
       <StepReview form={form} />,
     ],
     [form],
@@ -109,7 +105,7 @@ export default function App() {
       <BottomNavigation
         step={step}
         onBack={() => setStep((s) => Math.max(1, s - 1))}
-        onContinue={() => setStep((s) => Math.min(5, s + 1))}
+        onContinue={() => setStep((s) => Math.min(3, s + 1))}
       />
 
       <ChaosMediaOverlay

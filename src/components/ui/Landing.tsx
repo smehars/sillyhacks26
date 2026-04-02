@@ -22,7 +22,7 @@ export default function Landing({
   const anchorRef = useRef<HTMLDivElement>(null); 
 
   const handleApply = () => {
-    alert("Redirecting to our candidate portal... Please create a new account. Your previous 14 accounts cannot be found.");
+    alert("Redirecting to our candidate portal...");
     onApply(); 
   };
 
