@@ -46,11 +46,11 @@ export default function WorkdayTopHeader({
 
         {/* Nav */}
         <nav className="flex items-center gap-6 text-sm font-semibold text-gray-600">
-          {/* Help — triggers chaos media overlay */}
+          {/* Help — triggers chaos overlay */}
           <button
-            className="cursor-pointer hover:text-orange-500"
-            onClick={popHelp}
             type="button"
+            onClick={popHelp}
+            className="cursor-pointer hover:text-orange-500"
           >
             Help
           </button>
@@ -101,7 +101,7 @@ export default function WorkdayTopHeader({
         </nav>
       </header>
 
-      {/* Chaos media overlay — triggered by Help button */}
+      {/* Chaos media overlay */}
       <ChaosMediaOverlay
         activeMedia={activeMedia}
         mediaPool={MEDIA}
